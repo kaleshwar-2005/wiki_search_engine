@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --accent-color: #F5A623;
+    --text-color: #2C3E50;
+    --light-text: #7F8C8D;
+    --background-color: #F8F9FA;
+    --card-background: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.main-container {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.wiki-search-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px var(--shadow-color);
+}
+
+.wiki-logo {
+    width: 200px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.wiki-logo:hover {
+    transform: scale(1.05);
+}
+
+.search-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.search-input {
+    height: 55px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 12px 0 0 12px;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+.search-button {
+    height: 55px;
+    padding: 0 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0 12px 12px 0;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.search-button:hover {
+    background-color: #E6951F;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+.search-results {
+    padding: 20px 0;
+}
+
+.result-item {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.result-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-color);
+}
+
+.result-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.result-title:hover {
+    color: var(--secondary-color);
+}
+
+.result-url {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.result-url:hover {
+    color: #E6951F;
+}
+
+.link-description {
+    color: var(--light-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+#spinner {
+    margin: 40px 0;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+    }
+
+    .wiki-search-header {
+        padding: 30px 15px;
+        border-radius: 15px;
+    }
+
+    .wiki-logo {
+        width: 150px;
+    }
+
+    .search-title {
+        font-size: 2rem;
+    }
+
+    .search-input,
+    .search-button {
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .result-item {
+        padding: 20px;
+    }
+
+    .result-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .wiki-search-header {
+        padding: 20px 10px;
+    }
+
+    .wiki-logo {
+        width: 120px;
+    }
+
+    .search-title {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        border-radius: 12px;
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        border-radius: 12px;
+        width: 100%;
+    }
+
+    .result-item {
+        padding: 15px;
+    }
+
+    .result-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation for search results */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-item {
+    animation: fadeIn 0.5s ease-out forwards;
+}
