@@ -95,12 +95,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Font Awesome for the icons
 - Google Fonts for the typography
 
-## Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-
-Project Link: [https://github.com/yourusername/wikipedia-search-engine](https://github.com/yourusername/wikipedia-search-engine)
 
 ---
 
-Made with ❤️ by [Your Name] 
+Made with ❤️ by [Kaleshwar] 
